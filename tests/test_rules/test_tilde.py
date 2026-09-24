@@ -118,7 +118,7 @@ def test_get_version_is_valid() -> None:
         ("1.2rc2", "~=1.2.pre2", 0),
         ("1.2dev3", "~=1.2.dev3", 0),
         ("1.2dev1", "~=1.2dev2", -1),
-        ("1.3dev3", "~=1.2dev2", 0),  # 1.3dev3 is less than 1.3.0 becuase it is a dev version
+        ("1.3dev3", "~=1.2dev2", 0),  # 1.3dev3 is less than 1.3.0 because it is a dev version
         ("1.2post3", "~=1.2.post3", 0),
         ("1.2post1", "~=1.2post2", -1),
         ("1.2post3", "~=1.2post2", 0),
@@ -143,7 +143,7 @@ def test_get_version_is_valid_suffix(check_ver: str, vstr: str, result: int) -> 
         ("1.2rc2", "~=1.2.pre2", True),
         ("1.2dev3", "~=1.2.dev3", True),
         ("1.2dev1", "~=1.2dev2", False),
-        ("1.3dev3", "~=1.2dev2", True),  # 1.3dev3 is less than 1.3.0 becuase it is a dev version
+        ("1.3dev3", "~=1.2dev2", True),  # 1.3dev3 is less than 1.3.0 because it is a dev version
         ("1.2post3", "~=1.2.post3", True),
         ("1.2post1", "~=1.2post2", False),
         ("1.2post3", "~=1.2post2", True),

@@ -14,7 +14,7 @@ URL_RAW=$1
 # Replace main/tree with trunk where as main can be any branch name
 URL=$(echo $URL_RAW | sed 's/tree\/[A-Za-z0-9]*\?/trunk\//g')
 
-# get the last word of the url wihich is the folder name
+# get the last word of the url which is the folder name
 LAST_WORD=$(echo $URL | rev | cut -d'/' -f1 | rev)
 
 

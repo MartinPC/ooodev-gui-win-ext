@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script is can be run on the command line by calling reload in the contanier.
+# This script is can be run on the command line by calling reload in the container.
 # This script reloads the menu of the container.
 echo "Reloading..."
 if pgrep tint2 > /dev/null; then

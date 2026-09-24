@@ -84,7 +84,7 @@ def _protect_sheet(sht: _SHEET) -> None:
 
 def _is_origin(x: int, y: int) -> bool:
     # zero-based index
-    # get if cell is part of original gameboard.
+    # get if cell is part of original game board.
     global _game_board
     result = False
     try:
@@ -249,7 +249,7 @@ def display_fullscreen() -> None:
     pv_full_screen = PropertyValue(Name="FullScreen", Value=True)
     dispatcher.executeDispatch(document, ".uno:FullScreen", "", 0, (pv_full_screen,))
 
-    # hide sheet colum and row headers.
+    # hide sheet column and row headers.
     pv_headers = PropertyValue(Name="ViewRowColumnHeaders", Value=False)
     dispatcher.executeDispatch(document, ".uno:ViewRowColumnHeaders", "", 0, (pv_headers,))
 

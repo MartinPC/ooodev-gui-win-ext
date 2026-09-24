@@ -22,7 +22,7 @@ from ooodev.utils.file_io import FileIO
 from ooodev.utils.gui import GUI
 from ooodev.utils.kind.axis_kind import AxisKind
 from ooodev.utils.kind.chart2_types import ChartTypes
-from ooodev.utils.kind.data_point_lable_placement_kind import DataPointLabelPlacementKind
+from ooodev.utils.kind.data_point_label_placement_kind import DataPointLabelPlacementKind
 from ooodev.utils.lo import Lo
 from ooodev.utils.props import Props
 from ooodev.utils.type_var import PathOrStr
@@ -641,7 +641,7 @@ class Chart2View:
 
         # uses "Sneakers Sold this Month" table
         _ = Calc.set_selected_addr(doc=doc, sheet=sheet, range_name="A2:B8")
-        chart_doc = Chart2.insert_chart(chart_name="defaut_chart")
+        chart_doc = Chart2.insert_chart(chart_name="default_chart")
         # Calc.goto_cell(cell_name="A1", doc=doc)
 
         Chart2.set_title(chart_doc=chart_doc, title=Calc.get_string(sheet=sheet, cell_name="A1"))

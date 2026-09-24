@@ -152,7 +152,7 @@ class BuildTable:
     def _convert_addresses(self, sheet: XSpreadsheet) -> None:
         # cell name <--> position
         pos = Calc.get_cell_position(cell_name="AA2")
-        print(f"Positon of AA2: ({pos.X}, {pos.Y})")
+        print(f"Position of AA2: ({pos.X}, {pos.Y})")
 
         cell = Calc.get_cell(sheet=sheet, col=pos.X, row=pos.Y)
         Calc.print_cell_address(cell)

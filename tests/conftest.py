@@ -7,7 +7,7 @@ import tempfile
 import pytest
 
 
-def remove_readonly(func, path, excinfo):
+def remove_readonly(func, path, exc_info):
     try:
         os.chmod(path, stat.S_IWRITE)
         func(path)

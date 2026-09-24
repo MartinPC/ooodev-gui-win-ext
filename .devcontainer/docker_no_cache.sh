@@ -1,11 +1,11 @@
 #!/bin/sh
 
 if [ "$DEV_CONTAINER" = "1" ]; then
-    echo "This script can not berun in the dev container"
+    echo "This script can not be run in the dev container"
     exit 1
 fi
 
-# remove containers for theis project
+# remove containers for this project
 CONTAINERS=$(docker ps -a | grep "libreoffice_python_devcontainer" | cut -d' ' -f1)
 if [ -n "$CONTAINERS" ]; then
     for container in $CONTAINERS

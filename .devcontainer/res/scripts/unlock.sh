@@ -1,5 +1,5 @@
 #!/bin/sh
-# this script is call by running unlock on the command line in the contanier.
+# this script is call by running unlock on the command line in the container.
 # This script will kill any running instances of Libreoffice and remove the lock file.
 
 # kill soffice if it's running

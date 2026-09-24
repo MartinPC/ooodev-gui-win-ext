@@ -7,7 +7,7 @@
 source "$CONFIG_DIR/.tmp/res/scripts/ext.sh"
 
 # run soffice after ext are installed.
-# Some extensions such as the MRI extnesion seem to need an initial run to configure and work properly.
+# Some extensions such as the MRI extension seem to need an initial run to configure and work properly.
 # This call runs office in the background and then kills it after specified time.
 source "$CONFIG_DIR/.tmp/res/scripts/lo_init.sh"
 

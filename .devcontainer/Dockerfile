@@ -84,21 +84,21 @@ RUN  /usr/bin/pip install "poetry==$POETRY_VERSION" \
 
 WORKDIR /workspace/libreoffice_pip_ext
 COPY ./*.toml ./*.lock ./
-RUN poetry config virtualenvs.in-project true \
+RUN poetry config virtualenv.in-project true \
     && poetry install $(test "$RUN_ENV" == production && echo "--no-dev") --no-interaction --no-ansi --no-root --no-cache \
     && sed -i "s/include-system-site-packages = false/include-system-site-packages = false/g" /workspace/libreoffice_pip_ext/.venv/pyvenv.cfg
 
 # Many of these environment variable are required for python and LibreOffice imports to work correctly.
 # For instance without proper environment vars: from com.sun.star.frame import XComponentLoader # results in error
-# many of these values can be gotten by opening APSO console in running isntance of LinuxServer LibreOffice and
+# many of these values can be gotten by opening APSO console in running instance of LinuxServer LibreOffice and
 # import os
 # os.environ
 # See Also: https://uucode.com/blog/2013/01/09/solved-createinstancewithcontext-binary-urp-bridge-disposed-during-call/
 # Note: not all os's need extra LibreOffice Environment Vars, I did not have to do this for Ubuntu
 # Note: Path includes virtual environment path to allow for the virtual environment python to be used.
-#   This is by design so that LibreOfffice will use the virtual environment python by default.
+#   This is by design so that LibreOffice will use the virtual environment python by default.
 #   This is done by adding the virtual environment path to the beginning of the PATH environment variable.
-#   When Poetry installls the virtual environment it will be modified to include the system site packages.
+#   When Poetry installs the virtual environment it will be modified to include the system site packages.
 ENV PATH="/workspace/libreoffice_pip_ext/.venv/bin:/usr/lib/libreoffice/program:$PATH" \
     URE_BOOTSTRAP="file:///usr/lib/libreoffice/program/fundamentalrc" \
     # PYTHONPATH="/usr/lib/libreoffice/program/../program:$PYTHONPATH" \
